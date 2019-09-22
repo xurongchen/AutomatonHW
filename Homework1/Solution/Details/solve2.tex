@@ -1,0 +1,40 @@
+\begin{solution}
+    如图所示：\\
+    \begin{tikzpicture}
+        % \draw[help lines] (0,0) grid (10,-5);
+        \node[state,initial,initial text={}] at (1,0) (0){$000$};
+        \node[state] at (3,0) (1){$001$};
+        \node[state] at (5,0) (3){$011$};
+        \node[state,accepting] at (7,0) (7){$111$};
+
+        \node[state,accepting] at (1,-2) (4){$100$};
+        \node[state] at (3,-2) (2){$010$};
+        \node[state,accepting] at (5,-2) (5){$101$};
+        \node[state,accepting] at (7,-2) (6){$110$};
+
+        \path[->]
+        (0) edge [loop above]node {$0$} (0)
+        (0) edge node [above] {$1$} (1)
+
+        (1) edge node [right] {$0$} (2)
+        (1) edge node [above] {$1$} (3)
+
+        (2) edge node [below] {$0$} (4)
+        (2) edge [bend left] node [above] {$1$} (5)
+
+        (3) edge node [above right] {$0$} (6)
+        (3) edge node [above] {$1$} (7)
+        
+        (4) edge [left] node {$0$} (0)
+        (4) edge [above left] node {$1$} (1)
+        
+        (5) edge [bend left] node [above] {$0$} (2)
+        (5) edge node [left] {$1$} (3)
+        
+        (6) edge [bend left] node [below] {$0$} (4)
+        (6) edge node [above] {$1$} (5)
+        
+        (7) edge node [right] {$0$} (6)
+        (7) edge [loop above] node {$1$} (7);
+    \end{tikzpicture}
+\end{solution}
