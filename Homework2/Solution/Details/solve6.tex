@@ -1,0 +1,123 @@
+\begin{solution}
+    a)如图所示\\
+    \bigskip
+    \begin{tikzpicture}
+        \node[state,initial, initial text={}] at (0,0) (e) {$\epsilon$};
+
+        \node[state] at (0,-2) (x) {X};
+
+        \node[state,accepting] at (2,-2) (0) {0};
+        \node[state] at (2,0) (1) {1};
+        \node[state] at (4,-2) (2) {2};
+        \node[state] at (4,0) (3) {3};
+        \node[state] at (6,-2) (4) {4};
+
+        \path[->]
+        (e) edge node [left] {0} (x)
+        (e) edge node [above] {1} (1)
+        
+        (x) edge [loop below] node {0,1} (x)
+
+        (0) edge [loop below] node {0} (0)
+        (0) edge node [left] {1} (1)
+
+        (1) edge node [below left] {0} (2)
+        (1) edge [bend left] node [above] {1} (3)
+
+        (2) edge node [below] {0} (4)
+        (2) edge node [below] {1} (0)
+
+        (3) edge [bend left] node [above] {0} (1)
+        (3) edge node [left] {1} (2)
+
+        (4) edge node [above right] {0} (3)
+        (4) edge [loop right] node {1} (4)
+        ;
+    \end{tikzpicture}
+    \clearpage
+    b)如图所示：\\
+    \bigskip
+    \resizebox{320pt}{320pt}{%
+    \begin{tikzpicture}
+        \node[state,initial,initial text={}] at(10,10) (e) {$\epsilon$};
+        
+        \node[state] at (-2,0) (3-4) {3-4};
+        \node[state] at (-4,0) (3-3) {3-3};
+        \node[state] at (-6,0) (3-2) {3-2};
+        \node[state] at (-8,0) (3-1) {3-1};
+        \node[state,accepting] at (-10,0) (3-0) {3-0};
+
+        \node[state] at (0,-2) (4-4) {4-4};
+        \node[state] at (0,-4) (4-3) {4-3};
+        \node[state] at (0,-6) (4-2) {4-2};
+        \node[state] at (0,-8) (4-1) {4-1};
+        \node[state,accepting] at (0,-10) (4-0) {4-0};
+
+        \node[state] at (2,0) (2-4) {2-4};
+        \node[state] at (4,0) (2-3) {2-3};
+        \node[state] at (6,0) (2-2) {2-2};
+        \node[state] at (8,0) (2-1) {2-1};
+        \node[state,accepting] at (10,0) (2-0) {2-0};
+
+        \node[state] at (0,2) (1-4) {1-4};
+        \node[state] at (0,4) (1-3) {1-3};
+        \node[state] at (0,6) (1-2) {1-2};
+        \node[state] at (0,8) (1-1) {1-1};
+        \node[state,accepting] at (0,10) (1-0) {1-0};
+
+        \path[->]
+        (e) edge node [right,pos=0.1] {0} (2-0)
+        (e) edge node [left,pos=0.1] {1} (2-1)
+
+        (1-0) edge [bend left=45] node [above right,pos=0.05] {0} (2-0)
+        (1-1) edge [bend left=45] node [above right,pos=0.06] {0} (2-1)
+        (1-2) edge [bend left=45] node [above right,pos=0.07] {0} (2-2)
+        (1-3) edge [bend left=45] node [above,pos=0.1] {0} (2-3)
+        (1-4) edge [bend left=45] node [below,pos=0.15] {0} (2-4)
+        
+        (2-0) edge [bend left=45] node [right,pos=0.04] {0} (4-0)
+        (2-1) edge [bend left=45] node [right,pos=0.05] {0} (4-1)
+        (2-2) edge [bend left=45] node [right,pos=0.06] {0} (4-2)
+        (2-3) edge [bend left=45] node [left,pos=0.07] {0} (4-3)
+        (2-4) edge [bend left=45] node [left,pos=0.15] {0} (4-4)
+
+        (4-0) edge [bend left=45] node [below,pos=0.04] {0} (3-0)
+        (4-1) edge [bend left=45] node [above,pos=0.05] {0} (3-1)
+        (4-2) edge [bend left=45] node [above,pos=0.06] {0} (3-2)
+        (4-3) edge [bend left=45] node [above,pos=0.07] {0} (3-3)
+        (4-4) edge [bend left=45] node [above,pos=0.15] {0} (3-4)
+
+        (3-0) edge [bend left=45] node [left,pos=0.04] {0} (1-0)
+        (3-1) edge [bend left=45] node [left,pos=0.05] {0} (1-1)
+        (3-2) edge [bend left=45] node [right,pos=0.06] {0} (1-2)
+        (3-3) edge [bend left=45] node [right,pos=0.07] {0} (1-3)
+        (3-4) edge [bend left=45] node [right,pos=0.15] {0} (1-4)
+
+        (1-0) edge [bend left=40] node [below,pos=0.08] {1} (2-1)
+        (1-1) edge [bend left=40] node [below,pos=0.08] {1} (2-2)
+        (1-2) edge [bend left=40] node [below,pos=0.08] {1} (2-3)
+        (1-3) edge [bend left=40] node [below,pos=0.08] {1} (2-4)
+        (1-4) edge [bend left=12] node [above,pos=0.05] {1} (2-0)
+        
+        (2-0) edge [bend left=30] node [left,pos=0.04] {1} (4-2)
+        (2-1) edge [bend left=30] node [left,pos=0.05] {1} (4-3)
+        (2-2) edge [bend left=30] node [left,pos=0.05] {1} (4-4)
+        (2-3) edge [bend left=23] node [right, pos=0.04] {1} (4-0)
+        (2-4) edge [bend left=15] node [right, pos=0.05] {1} (4-1)
+
+        (4-0) edge [bend left=45] node [above,pos=0.05] {1} (3-4)
+        (4-1) edge [bend left=40] node [below,pos=0.05] {1} (3-0)
+        (4-2) edge [bend left=38] node [below,pos=0.05] {1} (3-1)
+        (4-3) edge [bend left=34] node [below,pos=0.05] {1} (3-2)
+        (4-4) edge [bend left=27] node [below,pos=0.09] {1} (3-3)
+
+        (3-0) edge [bend left=30] node [right,pos=0.05] {1} (1-3)
+        (3-1) edge [bend left=30] node [below,pos=0.1] {1} (1-4)
+        (3-2) edge [bend left=30] node [left,pos=0.03] {1} (1-0)
+        (3-3) edge [bend left=28] node [left,pos=0.05] {1} (1-1)
+        (3-4) edge [bend left=20] node [left,pos=0.06] {1} (1-2)
+
+        ;
+    \end{tikzpicture}
+    }
+\end{solution}

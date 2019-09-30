@@ -1,0 +1,49 @@
+\begin{solution}DFA转移表：
+\begin{center}
+    \begin{tabular}{r||l|l||r||l|l}
+                        & $0$           & $1$   & ~             & $0$           & $1$\\ \hline \hline
+        $\rightarrow p$ & $qs$          & $q$   & $*qs$         & $r$           & $pqr$\\
+        $*q$            & $r$           & $qr$  & $*rs$         & $s$           & $p$\\
+        $r$             & $s$           & $p$   & $*pqr$        & $qrs$         & $pqr$\\
+        $*s$            & $\emptyset$   & $p$   & $*qrs$        & $rs$          & $pqr$\\
+        $*pq$           & $qrs$         & $qr$  & $\emptyset$   & $\emptyset$   & $\emptyset$\\
+        $*qr$           & $rs$          & $pqr$
+    \end{tabular}
+\end{center}
+    % 如图所示：\\
+    % \begin{tikzpicture}
+        
+    %     % \draw[help lines] (0,0) grid (10,-5);
+    %     \node[state,initial,initial text={}] at (1,0) (p){$\{p\}$};
+    %     \node[state,accepting,minimum size=40] at (5,0) (q){$\{q\}$};
+    %     \node[state] at (7,0) (r){$\{r\}$};
+    %     \node[state,accepting] at (1,-2) (qs){$\{q,s\}$};
+    %     \node[state,accepting] at (1,-4) (qr){$\{q,r\}$};
+    %     \node[state,accepting] at (1,-6) (pqr){$\{p,q,r\}$};
+    %     \node[state,accepting] at (3,-4) (rs){$\{r,s\}$};
+    %     \node[state,accepting] at (5,-4) (s){$\{s\}$};
+    %     \node[state] at (7,-4) (e){$\emptyset$};
+
+    %     \node[state,accepting] at (3,-2) (qrs){$\{q,r,s\}$};
+    %     \node[state,accepting] at (5,-2) (pq){$\{p,q\}$};
+
+
+    %     \path[->]
+    %     (p) edge node {0} (qs)
+    %     (p) edge node {1} (q)
+
+    %     (qs) edge node {0} (r)
+    %     (qs) edge node {1} (pqr)
+
+    %     (q) edge node {0} (r)
+    %     (q) edge node {1} (qr)
+
+    %     (r) edge node {0} (s)
+    %     (r) edge node {1} (p)
+
+    %     (pqr) edge node {0} (qrs)
+    %     (pqr) edge node {1} (pqr)
+
+    %     ;
+    % \end{tikzpicture}
+\end{solution}

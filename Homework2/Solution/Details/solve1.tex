@@ -1,0 +1,7 @@
+\begin{proof}
+    归纳法证明：\\
+    根据$\hat\delta$的定义，$\hat\delta(q,\epsilon)=q$.\\
+    假设对任意输入串$s$有$\hat\delta(q,s)=q$，那么对字母表的任意符号$a$，有：
+    $$\hat\delta(q,sa)=\delta(\hat\delta(q,s),a)=\delta(q,a)=q$$
+    故对任意输入串$w$，$\hat\delta(q,w)=q$.
+\end{proof}

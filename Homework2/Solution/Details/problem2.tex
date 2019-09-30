@@ -1,0 +1,10 @@
+\textbf{[Exercise 2.3.2]} Convert to a DFA the following NFA:
+\begin{center}
+    \begin{tabular}{r||l|l}
+        & $0$           & $1$\\ \hline \hline
+        $\rightarrow p$ & $\{q,s\}$     & $\{q\}$\\
+        $*q$            & $\{r\}$       & $\{q,r\}$\\
+        $r$             & $\{s\}$       & $\{p\}$\\
+        $*s$            & $\emptyset$   & $\{p\}$
+    \end{tabular}
+\end{center}

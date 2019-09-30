@@ -1,0 +1,103 @@
+\begin{solution}
+    a)可能存在歧义，理解题目语义为：字符串存在至少5个字母，且连续5个字母至少包含两个0。\\
+    如图所示：\\\bigskip
+    \begin{tikzpicture}
+        \node[state] at (0,-1) (x){x};
+        \node[state,accepting] at (2,-1) (3){3};
+        \node[state,accepting] at (4,-1) (2){2};
+        \node[state,accepting] at (6,-1) (1){1};
+        \node[state,accepting] at (8,-1) (0){0};
+
+        \node[state] at (2,1.5) (4-3){4-3};
+        \node[state] at (4,1.5) (4-2){4-2};
+        \node[state] at (6,1.5) (4-1){4-1};
+        \node[state] at (8,1.5) (4-0){4-0};
+
+        \node[state] at (0,4) (3-3){3-3};
+        \node[state] at (2,4) (3-2){3-2};
+        \node[state] at (4,4) (3-1){3-1};
+        \node[state] at (6,4) (3-0){3-0};
+
+        \node[state] at (0,6) (2-2){2-2};
+        \node[state] at (2,6) (2-1){2-1};
+        \node[state] at (4,6) (2-0){2-0};
+
+        \node[state] at (0,8) (1-1){1-1};
+        \node[state] at (2,8) (1-0){1-0};
+
+        \node[state,initial,initial text={}] at (0,10) (0-0){0-0};
+ 
+
+        \path[->]
+        (0-0) edge node [above right] {0} (1-0)
+        (0-0) edge node [left] {1} (1-1)
+
+        (1-0) edge node [above right] {0} (2-0)
+        (1-0) edge node [right,pos=0.2] {1} (2-1)
+
+        (2-0) edge node [above right] {0} (3-0)
+        (2-0) edge node [right,pos=0.2] {1} (3-1)
+
+        (3-0) edge node [above right] {0} (4-0)
+        (3-0) edge node [right,pos=0.2] {1} (4-1)
+
+        (4-0) edge node [right] {0} (0)
+        (4-0) edge node [below,pos=0.1] {1} (1)
+
+        (1-1) edge node [below left,pos = 0.2] {0} (2-0)
+        (1-1) edge node [left] {1} (2-2)
+
+        (2-1) edge node [below,pos = 0.1] {0} (3-0)
+        (2-1) edge node [left] {1} (3-2)
+
+        (3-1) edge node [below,pos=0.1] {0} (4-0)
+        (3-1) edge node [left,pos=0.7] {1} (4-2)    
+
+        (4-1) edge node [below,pos=0.1] {0} (0)
+        (4-1) edge node [below,pos=0.1] {1} (2)
+
+        (2-2) edge node [below,pos=0.1] {0} (3-0)
+        (2-2) edge node [left] {1} (3-3)      
+
+        (3-2) edge node [below,pos=0.1] {0} (4-0)
+        (3-2) edge node [left] {1} (4-3)
+
+        (4-2) edge node [below,pos=0.1] {0} (0)
+        (4-2) edge node [below right,pos=0.4] {1} (3)
+
+        (3-3) edge node [below,pos=0.1] {0} (4-0)
+        (3-3) edge node [left] {1} (x)
+
+        (4-3) edge node [below,pos=0.1] {0} (0)
+        (4-3) edge node [below,pos=0.4] {1} (x)
+
+        (0) edge [loop right] node {0} (0)
+        (0) edge node [above] {1} (1)
+
+        (1) edge [bend right] node [below] {0} (0)
+        (1) edge node [above] {1} (2)
+
+        (2) edge [bend right=50] node [below] {0} (0)
+        (2) edge node [above] {1} (3)
+
+        (3) edge [bend right=60] node [below] {0} (0)
+        (3) edge node [above] {1} (x)
+
+        (x) edge [loop below] node {0,1} (x)
+        ;
+
+     \end{tikzpicture}\\
+     \clearpage
+    b)构造自动机$A=\{Q,\Sigma,\delta,q_{start},Q_{end}\}$：\\
+    $Q=\{q_0,q_1,\cdots,q_{1023}\}$\\
+    $\Sigma=\{0,1\}$\\
+    
+    $q_{start}=q_0$\\
+    $Q_{end}=\{q_i \mid i ~ \& ~ 512 = 512 \}$
+
+    $\delta(q_k,m)=q_t$ 当且仅当 $((k << 1）) ~ | ~ m) ~ \& ~ 1023 = t$\\
+    其中：\\
+    \qquad$\&$是二进制位运算与；\\
+    \qquad$|$是二进制位运算或；\\
+    \qquad$<<$是二进制左移位运算.
+\end{solution}
