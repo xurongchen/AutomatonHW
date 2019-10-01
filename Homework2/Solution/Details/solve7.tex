@@ -1,0 +1,22 @@
+\begin{solution}
+    a)如图所示\\
+    \bigskip
+    \begin{tikzpicture}
+        \node[state,initial,initial text={}] at (0,0) (s) {};
+        \node[state] at (2,0) (a) {};
+        \node[state] at (4,0) (b) {};
+        \node[state] at (6,0) (c) {};
+        \node[state,accepting] at (8,0) (e) {};
+        \path[->]
+        (s) edge [loop above] node {$\Sigma$} (s)
+        (s) edge node [above] {$\epsilon$} (a)
+        (a) edge node [above] {$\epsilon$} (b)
+        (b) edge node [above] {$\epsilon$} (c)
+        (c) edge node [above] {$\epsilon$} (e)
+        (e) edge [loop above] node {$\Sigma$} (e)
+        (a) edge [loop above] node {$a$} (a)
+        (b) edge [loop above] node {$b$} (b)
+        (c) edge [loop above] node {$c$} (c)
+        ;
+    \end{tikzpicture}
+\end{solution}
