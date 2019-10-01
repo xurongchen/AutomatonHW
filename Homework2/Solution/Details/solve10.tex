@@ -1,4 +1,4 @@
 \begin{proof}
     若$L=\{Q,\Sigma,\delta,q_0,Q_{end}\}$，则对应可构造出一个DFA：$L/a=\{Q,\Sigma,\delta,q_0,Q'_{end}\}$.
-    其中：$Q'_{end}=\{ q \mid \delta(q,a)\in Q_{end} \}$.
+    其中：$Q'_{end}=\{ q \mid q\in Q \wedge \delta(q,a)\in Q_{end} \}$.
 \end{proof}
