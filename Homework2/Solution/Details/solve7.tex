@@ -8,12 +8,12 @@
         \node[state] at (6,0) (c) {};
         \node[state,accepting] at (8,0) (e) {};
         \path[->]
-        (s) edge [loop above] node {$\Sigma$} (s)
+        % (s) edge [loop above] node {$\Sigma$} (s)
         (s) edge node [above] {$\epsilon$} (a)
         (a) edge node [above] {$\epsilon$} (b)
         (b) edge node [above] {$\epsilon$} (c)
         (c) edge node [above] {$\epsilon$} (e)
-        (e) edge [loop above] node {$\Sigma$} (e)
+        % (e) edge [loop above] node {$\Sigma$} (e)
         (a) edge [loop above] node {$a$} (a)
         (b) edge [loop above] node {$b$} (b)
         (c) edge [loop above] node {$c$} (c)
