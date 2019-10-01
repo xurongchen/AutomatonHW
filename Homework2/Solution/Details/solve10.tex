@@ -1,27 +1,4 @@
-\begin{solution}
-    a) $p$,$q$,$r$的$\epsilon$闭包：\\
-    $ECLOSE(p) = \{p,q,r\}$\\
-    $ECLOSE(q) = \{q\}$\\ 
-    $ECLOSE(r) = \{r\}$\\
-    b) 自动机所接受的长度3以下的串有：\\
-    a, b, c, aa, ab, ac, ba, bb, bc, ca, cb, cc,\\
-    aaa, aab, aac, aba, abb, abc, aca, acb, acc,\\
-    baa, bab, bac, bca, bcb, bcc,\\
-    caa, cab, cac, cba, cbb, cbc, cca, ccb, ccc.\\
-    c)如图所示\\
-    \bigskip
-    \begin{tikzpicture}
-        \node[state,initial,initial text={},accepting] at (0,0) (p) {};
-        \node[state,accepting] at (2,0) (qr) {};
-        \node[state,accepting] at (4,0) (r) {};
-        \node[state] at (6,0) (x) {};
-        \path[->]
-        (p) edge [loop above] node {$a,c$} (p)
-        (p) edge node [below] {$b$} (qr)
-        (qr) edge [bend right] node [above] {$a,c$} (p)
-        (qr) edge node [above] {$b$} (r)
-        (r) edge node [above] {$a,b,c$} (x)
-        (x) edge [loop above] node {$a,b,c$} (x)
-        ;
-    \end{tikzpicture}
-\end{solution}
+\begin{proof}
+    若$L=\{Q,\Sigma,\delta,q_0,Q_{end}\}$，则对应可构造出一个DFA：$L/a=\{Q,\Sigma,\delta,q_0,Q'_{end}\}$.
+    其中：$Q'_{end}=\{ q \mid \delta(q,a)\in Q_{end} \}$.
+\end{proof}
