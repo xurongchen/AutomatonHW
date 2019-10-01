@@ -3,6 +3,7 @@
     \begin{tikzpicture}
         % \draw[help lines] (0,0) grid (10,-5);
         \node[state,initial,initial text={}] at (1,0) (e){};
+        \node[state,accepting] at (1,-3) (s){};
         \node[state] at (5,3) (0){};
         \node[state] at (5,1) (1){};
         \node[] at (5,0.1) (x){\vdots};
@@ -15,18 +16,19 @@
         \node[state,accepting] at (7,-1) (8f){};
         \node[state,accepting] at (7,-3) (9f){};
         \path[->]
-        (e) edge node [above] {$\epsilon$} (0)
+        (e) edge node [right] {$\Sigma-\{0\}$} (0)
         (0) edge [loop above] node {$\Sigma-\{0\}$} (0)
         (0) edge node [above] {$\{0\}$} (0f)
-        (e) edge node [above] {$\epsilon$} (1)
+        (e) edge node [above] {$\Sigma-\{1\}$} (1)
         (1) edge [loop above] node {$\Sigma-\{1\}$} (1)
         (1) edge node [above] {$\{1\}$} (1f)
-        (e) edge node [above] {$\epsilon$} (8)
+        (e) edge node [above] {$\Sigma-\{8\}$} (8)
         (8) edge [loop below] node {$\Sigma-\{8\}$} (8)
-        (8) edge node [above] {$\{8\}$} (8f)
-        (e) edge node [above] {$\epsilon$} (9)
+        (8) edge node [right] {$\{8\}$} (8f)
+        (e) edge node [right] {$\Sigma-\{9\}$} (9)
         (9) edge [loop below] node {$\Sigma-\{9\}$} (9)
-        (9) edge node [above] {$\{9\}$} (9f);
+        (9) edge node [above] {$\{9\}$} (9f)
+        (e) edge node [left] {$\Sigma$} (s);
     \end{tikzpicture}\\
     c)如图所示：\\
     \begin{tikzpicture}
