@@ -1,0 +1,15 @@
+\begin{solution}
+    c)如图所示：\\
+    \begin{tikzpicture}
+        \node[state,initial,initial text={}] at (-3,0) (0) {};
+        \node[state] at (-1,0) (1) {};
+        \node[state,accepting] at (1,0) (2) {};
+        \node[state] at (3,0) (3) {};
+        \path[->]
+        (0) edge node [above] {$0$} (1)
+        (1) edge node [above] {$0$} (2)
+        (2) edge [bend left] node [above] {$0,1$} (3)
+        (3) edge [bend left] node [below] {$\epsilon$} (2)
+        ;
+    \end{tikzpicture}\\
+\end{solution}

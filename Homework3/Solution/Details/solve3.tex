@@ -1,0 +1,64 @@
+\begin{solution}最初的DFA：\\
+    \begin{tikzpicture}
+        \node[state,initial,initial text={},accepting] at (-3,0) (p) {$p$};
+        \node[state] at (-1,0) (s) {$s$};
+        \node[state] at (1,0) (q) {$q$};
+        \node[state] at (3,0) (r) {$r$};
+        \path[->]
+        (p) edge node [above] {$0$} (s)
+        (p) edge [loop above] node [above] {$1$} (p)
+
+        (s) edge [bend left] node [above] {$1$} (r)
+        (s) edge node [above] {$0$} (q)
+
+        (r) edge [loop above] node [above] {$0$} (r)
+        (r) edge node [above] {$1$} (q)
+        
+        (q) edge [bend left] node [below] {$0$} (p)
+        (q) edge [bend left] node [above] {$1$} (s)
+        ;
+    \end{tikzpicture}\\
+    删除结点$r$：\\
+    \begin{tikzpicture}
+        \node[state,initial,initial text={},accepting] at (-3,0) (p) {$p$};
+        \node[state] at (-1,0) (s) {$s$};
+        \node[state] at (1,0) (q) {$q$};
+
+        \path[->]
+        (p) edge node [above] {$0$} (s)
+        (p) edge [loop above] node [above] {$1$} (p)
+
+        (s) edge [bend left] node [above] {$0+10^*1$} (q)
+        % (s) edge node [above] {$0$} (q)
+
+        (q) edge [bend left] node [below] {$0$} (p)
+        (q) edge node [below] {$1$} (s)
+        ;
+    \end{tikzpicture}\\
+    删除结点$q$：\\
+    \begin{tikzpicture}
+        \node[state,initial,initial text={},accepting] at (-3,0) (p) {$p$};
+        \node[state] at (-1,0) (s) {$s$};
+
+        \path[->]
+        (p) edge node [above] {$0$} (s)
+        (p) edge [loop above] node [above] {$1$} (p)
+
+        (s) edge [loop right] node [right] {$(0+10^*1)1$} (q)
+        (s) edge [bend left] node [below] {$(0+10^*1)0$} (p)
+        ;
+    \end{tikzpicture}\\
+    删除结点$s$：\\
+    \begin{tikzpicture}
+        \node[state,initial,initial text={},accepting] at (-3,0) (p) {$p$};
+        \path[->]
+        (p) edge [loop right] node [right] {$1+0((0+10^*1)1)^*(0+10^*1)0$} (p)
+        ;
+    \end{tikzpicture}\\
+    所以转换后的正则表达式为：
+    $$(1+0((0+10^*1)1)^*(0+10^*1)0)^*$$
+\end{solution}
+% p s
+% q r
+
+% p s r q

@@ -1,0 +1,38 @@
+\begin{proof}
+    b) \\
+    (1) 证明$(RS+R)^*R \subseteq R(SR+R)^*$：\\
+    设$T = (RS+R)^*R$。如果对$i \ge 0$，有$T_i = (RS+R)^iR$，那么$T$有如下表示：
+    $$T = \bigcup_{i=0}^{\infty} T_i$$
+    显然，$T_0 = R \subseteq R(SR+R)^*$；\\
+    假设$T_i \subseteq R(SR+R)^*$，则：
+    \begin{align*}
+        T_{i+1} =& (RS+R)T_i \\
+        \subseteq& (RS+R)R(SR+R)^* \\
+        =& R(S+\epsilon)R(SR+R)^* \\
+        =& R(SR+R)(SR+R)^* \\
+        \subseteq& R(SR+R)^*
+    \end{align*}
+    所以，对任意$i \ge 0$，有$T_i \subseteq R(SR+R)^*$。\\
+    于是得到$T \subseteq R(SR+R)^*$.\\
+    \medskip
+    (2) 证明$R(SR+R)^* \subseteq (RS+R)^*R$：\\
+    设$U = R(SR+R)^*$。如果对$i \ge 0$，有$U_i = R(SR+R)^i$，那么$U$有如下表示：
+    $$U = \bigcup_{i=0}^{\infty} U_i$$
+    显然，$U_0 = R \subseteq (RS+R)^*R$；\\
+    假设$U_i \subseteq (RS+R)^*R$，则：
+    \begin{align*}
+        U_{i+1} =& U_i(SR+R) \\
+        \subseteq& (RS+R)^*R(SR+R) \\
+        =& (RS+R)^*R(S+\epsilon)R \\
+        =& (RS+R)^*(RS+R)R \\
+        \subseteq& (RS+R)^*R
+    \end{align*}
+    所以，对任意$i \ge 0$，有$U_i \subseteq (RS+R)^*R$。\\
+    于是得到$U \subseteq (RS+R)^*R$.\\
+    \medskip
+    (3) 综上，$(RS+R)^*R = R(SR+R)^*$\\
+    \bigskip
+    d) $(R+S)^*S \neq (R^*S)^*$\\
+    反例：若$S$满足$\epsilon \notin S$，则$\epsilon \notin (R+S)^*S$且
+    $\epsilon \in (R^*S)^*$，所以两者不等。
+\end{proof}
