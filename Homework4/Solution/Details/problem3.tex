@@ -1,0 +1,17 @@
+\textbf{[Exercise 4.2.2]} In Fig. 4.15 is the transition table of a DFA.\\
+a) Draw the table of distinguishabilities for this automation.\\
+b) Construct the minimum-state equivalent DFA.
+\begin{center}
+    \begin{tabular}{r||c|c}
+                            & $0$          & $1$   \\ \hline \hline
+        $\rightarrow A$     & $B$          & $E$   \\
+        $B$                 & $C$          & $F$   \\
+        $*C$                & $D$          & $H$   \\
+        $D$                 & $E$          & $H$    \\
+        $E$                 & $F$          & $I$   \\
+        $*F$                & $G$          & $B$   \\
+        $G$                 & $H$          & $B$   \\
+        $H$                 & $I$          & $C$   \\
+        $*I$                & $A$          & $E$   
+    \end{tabular}
+\end{center}

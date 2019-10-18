@@ -1,0 +1,42 @@
+\begin{solution}a)区分表：\\
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \cline{1-2}
+            $B$ & X \\\cline{1-3}
+            $C$ & X & X \\\cline{1-4}
+            $D$ &   & X & X \\\cline{1-5}
+            $E$ & X &   & X & X \\\cline{1-6}
+            $F$ & X & X &   & X & X \\\cline{1-7}
+            $G$ &   & X & X &   & X & X \\\cline{1-8}
+            $H$ & X &   & X & X &   & X & X \\\cline{1-9}
+            $I$ & X & X &   & X & X &   & X & X \\\hline
+                &$A$&$B$&$C$&$D$&$E$&$F$&$G$&$H$\\\hline
+        \end{tabular}
+    \end{center}
+    % \begin{center}
+    %     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    %         \cline{1-2}
+    %         $B$ &   \\\cline{1-3}
+    %         $C$ & X & X \\\cline{1-4}
+    %         $D$ &   &   & X \\\cline{1-5}
+    %         $E$ &   &   & X &   \\\cline{1-6}
+    %         $F$ & X & X &   & X & X \\\cline{1-7}
+    %         $G$ &   &   & X &   &   & X \\\cline{1-8}
+    %         $H$ &   &   & X &   &   & X &   \\\cline{1-9}
+    %         $I$ & X & X &   & X & X &   & X & X \\\hline
+    %             &$A$&$B$&$C$&$D$&$E$&$F$&$G$&$H$\\\hline
+    %     \end{tabular}
+    % \end{center}
+    b)划分等价类：$\{A,D,G\}$,$\{B,E,H\}$,$\{C,F,I\}$。\\DFA如下图：\\\bigskip
+    \begin{tikzpicture}
+        \node[state,initial,initial text={}] at (-5,0) (a) {$ADG$};
+        \node[state] at (-1,0) (b) {$BEH$};
+        \node[state,accepting] at (-1,-4) (c) {$CFI$};
+        \path[->]
+        (a) edge node [above] {$0,1$} (b)
+        (b) edge [bend left] node [right] {$0,1$} (c)
+        (c) edge [bend left] node [left] {$1$} (b)
+        (c) edge node [below left] {$0$} (a)
+        ;
+    \end{tikzpicture}\\
+\end{solution}
