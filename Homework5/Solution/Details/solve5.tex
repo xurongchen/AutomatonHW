@@ -1,0 +1,44 @@
+\begin{solution}
+    最左推导：
+    \begin{align*}
+        E &\Rightarrow +EE \Rightarrow +* EEE \Rightarrow +*- EEEE \Rightarrow +*- xEEE\\
+        &\Rightarrow +*- xyEE  \Rightarrow +*- xyxE \Rightarrow +*- xyxy
+    \end{align*}
+    最右推导：
+    \begin{align*}
+        E &\Rightarrow +EE \Rightarrow + Ey \Rightarrow +* EEy \Rightarrow +* Exy\\
+        &\Rightarrow +*- EExy  \Rightarrow +*- Eyxy \Rightarrow +*- xyxy
+    \end{align*}
+    推导树：
+    \begin{center}
+        \begin{tikzpicture} 
+            \node {$E$} 
+                child { node {$+$} }
+                child { 
+                    node {$E$} 
+                    child { node {$*$} }
+                    child { 
+                        node {$E$}
+                        child { node {$-$} }
+                        child { 
+                            node {$E$} 
+                            child { node {$x$} }
+                        }
+                        child { 
+                            node {$E$} 
+                            child { node {$y$} }
+                        } 
+                    }
+                    child { 
+                        node {$E$} 
+                        child { node[right=35] {$x$} }
+                    }
+                }
+                child { 
+                    node {$E$} 
+                    child { node[right=35] {$y$} }
+                }
+                ; 
+        \end{tikzpicture}
+    \end{center}
+\end{solution}

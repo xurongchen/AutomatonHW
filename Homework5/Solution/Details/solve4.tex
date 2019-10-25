@@ -1,0 +1,94 @@
+\begin{solution}
+    a)00101.\\
+    \begin{center}
+        \begin{tikzpicture} 
+            \node {S} 
+                child { 
+                    node {A} 
+                    child {node {0}}
+                    child {
+                        node {A}
+                        child {node {0}}
+                        child {
+                            node {A}
+                            child {node {$\epsilon$}}
+                        }
+                    }
+                }
+                child { node {1} }
+                child { 
+                    node {B}
+                    child {node {0}}
+                    child {
+                        node {B}
+                        child {node {1}}
+                        child {
+                            node{B}
+                            child {node {$\epsilon$}}
+                        }
+                    }
+                } 
+                ; 
+        \end{tikzpicture}
+    \end{center}
+    b)1001.\\
+    \begin{center}
+        \begin{tikzpicture} 
+            \node {S} 
+                child { 
+                    node {A} 
+                    child {node {$\epsilon$}}
+                }
+                child { node {1} }
+                child { 
+                    node {B}
+                    child {node {0}}
+                    child {
+                        node {B}
+                        child {node {0}}
+                        child {
+                            node{B}
+                            child {node {1}}
+                            child {
+                                node {B}
+                                child {node {$\epsilon$}}
+                            }
+                        }
+                    }
+                } 
+                ; 
+        \end{tikzpicture}
+    \end{center}
+    c)00011.\\
+    \begin{center}
+        \begin{tikzpicture} 
+            \node {S} 
+                child { 
+                    node {A} 
+                    child {node {0}}
+                    child {
+                        node {A}
+                        child {node {0}}
+                        child {
+                            node {A}
+                            child {node {0}}
+                            child {
+                                node {A}
+                                child {node {$\epsilon$}}
+                        }
+                    }
+                    }
+                }
+                child { node {1} }
+                child { 
+                    node {B}
+                    child {node {1}}
+                    child {
+                        node{B}
+                        child {node {$\epsilon$}}
+                    }
+                } 
+                ; 
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
