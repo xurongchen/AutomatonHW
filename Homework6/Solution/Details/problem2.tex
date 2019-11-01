@@ -1,0 +1,17 @@
+\textbf{[Exercise 6.2.5]} PDA 
+$P=(\{q_0,q_1,q_2,q_3,f\},\{a,b\},\{Z_0,A,B\},\delta,$ $q_0,Z_0,\{f\})$ has the following 
+rules defining $\delta$:
+
+\resizebox{\linewidth}{!}{
+    \begin{tabular}{lll}
+        $\delta(q_0,a,Z_0) = (q_1,AAZ_0)$           & $\delta(q_0,b,Z_0) = (q_2,BZ_0)$      & $\delta(q_0,\epsilon,Z_0) = (f,\epsilon)$\\
+        $\delta(q_1,a,A) = (q_1,AAA)$               & $\delta(q_1,b,A) = (q_1,\epsilon)$    & $\delta(q_1,\epsilon,Z_0) = (q_0,Z_0)$\\
+        $\delta(q_2,a,B) = (q_3,\epsilon)$          & $\delta(q_2,b,B) = (q_2,BB)$          & $\delta(q_2,\epsilon,Z_0) = (q_0,Z_0)$\\
+        $\delta(q_3,\epsilon,B) = (q_2,\epsilon)$   & $\delta(q_3,\epsilon,Z_0) = (q_1,AZ_0)$ 
+    \end{tabular}
+}
+
+Note that, since each of the sets above has only one choice of move, we have omitted
+the set brackets from each of the rules.
+
+b) Give an execution trace showing that $abb$ is in $L(P)$.

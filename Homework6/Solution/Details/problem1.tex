@@ -1,0 +1,22 @@
+\textbf{[Exercise 6.1.1]} Suppose the PDA 
+$P=(\{q,p\},\{0,1\},\{Z_0,X\},\delta,q,$ $Z_0,\{p\})$ has the following transition
+fuciton:
+
+1. $\delta(q,0,Z_0) = \{(q,XZ_0)\}$.
+
+2. $\delta(q,0,X) = \{(q,XX)\}$.
+
+3. $\delta(q,1,X) = \{(q,X)\}$.
+
+4. $\delta(q,\epsilon,X) = \{(p,\epsilon)\}$.
+
+5. $\delta(p,\epsilon,X) = \{(p,\epsilon)\}$.
+
+6. $\delta(p,1,X) = \{(p,XX)\}$.
+
+7. $\delta(p,1,Z_0) = \{(p,\epsilon)\}$.
+
+Starting from the initial ID ($q$,$w$,$Z_0)$), show all the reachable ID's when the 
+input $w$ is:
+
+b) 0011.
