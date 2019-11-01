@@ -1,3 +1,37 @@
 \begin{solution}
- 
+a)
+$P_1=(\{q,p,s,e\},\{0,1\},\{Z_0,X,Y\},\delta,s,Y)$包括以下14个转移函数：\\
+1. $\delta(q,0,Z_0) = \{(q,XZ_0)\}$.\\
+2. $\delta(q,0,X) = \{(q,XX)\}$.\\
+3. $\delta(q,1,X) = \{(q,X)\}$.\\
+4. $\delta(q,\epsilon,X) = \{(p,\epsilon)\}$.\\
+5. $\delta(p,\epsilon,X) = \{(p,\epsilon)\}$.\\
+6. $\delta(p,1,X) = \{(p,XX)\}$.\\
+7. $\delta(p,1,Z_0) = \{(p,\epsilon)\}$.\\
+
+8. $\delta(s,\epsilon,Y) = \{(q,Z_0Y)\}$.\\
+
+9. $\delta(p,\epsilon,Z_0) = \{(e,\epsilon)\}$.\\
+10. $\delta(p,\epsilon,X) = \{(e,\epsilon)\}$.\\
+11. $\delta(p,\epsilon,Y) = \{(e,\epsilon)\}$.\\
+12. $\delta(e,\epsilon,Z_0) = \{(e,\epsilon)\}$.\\
+13. $\delta(e,\epsilon,X) = \{(e,\epsilon)\}$.\\
+14. $\delta(e,\epsilon,Y) = \{(e,\epsilon)\}$.\\
+
+b)
+$P_2=(\{q,p,s,e\},\{0,1\},\{Z_0,X,Y\},\delta,s,Y,\{e\})$包括以下10个转移函数：\\
+1. $\delta(q,0,Z_0) = \{(q,XZ_0)\}$.\\
+2. $\delta(q,0,X) = \{(q,XX)\}$.\\
+3. $\delta(q,1,X) = \{(q,X)\}$.\\
+4. $\delta(q,\epsilon,X) = \{(p,\epsilon)\}$.\\
+5. $\delta(p,\epsilon,X) = \{(p,\epsilon)\}$.\\
+6. $\delta(p,1,X) = \{(p,XX)\}$.\\
+7. $\delta(p,1,Z_0) = \{(p,\epsilon)\}$.\\
+
+8. $\delta(s,\epsilon,Y) = \{(q,Z_0Y)\}$.\\
+
+9. $\delta(p,\epsilon,Y) = \{(e,\epsilon)\}$.\\
+10. $\delta(q,\epsilon,Y) = \{(e,\epsilon)\}$.\\
+
+
 \end{solution}

@@ -1,3 +1,92 @@
 \begin{solution}
-
+b）如图所示：\\
+\begin{center}
+    \resizebox{230pt}{!}{
+    \begin{tikzpicture} [->]
+        \node {$(q,0011,Z_0)$} 
+            child { 
+                node {$(q,011,XZ_0)$} 
+                child { 
+                    node {$(q,11,XXZ_0)$} 
+                    child { 
+                        node {$(q,1,XXZ_0)$}
+                        child { 
+                            node {$(q,\epsilon,XXZ_0)$}
+                            child { 
+                                node [left=5] {$(q,\epsilon,XZ_0)$}
+                                child { 
+                                    node [below] {$(q,\epsilon,Z_0)$}
+                                }
+                            }   
+                            child { 
+                                node [left] {$(p,\epsilon,XZ_0)$}
+                                child { 
+                                    node [below] {$(p,\epsilon,Z_0)$}
+                                }
+                            }
+                        }
+                        child [right=30] { 
+                            node {$(q,1,XZ_0)$}
+                            child [left] { 
+                                node {$(q,\epsilon,XXZ_0)$}
+                                child [below] { 
+                                    node {$(q,\epsilon,XZ_0)$}
+                                    child [below] {node {$(q,\epsilon,Z_0)$}}
+                                }
+                            }
+                            child [left] { 
+                                node {$(q,1,Z_0)$}
+                                child { 
+                                    node [below] {$(q,\epsilon,\epsilon)$}
+                                }
+                            }
+                        }
+                    }
+                    child {
+                        node [right=100] {$(p,11,XZ_0)$}
+                        child {
+                            node {$(p,1,XXZ_0)$}
+                            child {
+                                node {$(p,\epsilon,XXXZ_0)$}
+                                child {
+                                    node {$(p,\epsilon,XXZ_0)$}
+                                    child {
+                                        node {$(p,\epsilon,XZ_0)$}
+                                        child { node {$(p,\epsilon,Z_0)$}}
+                                    }
+                                }
+                            }
+                            child {
+                                node [right] {$(p,1,XZ_0)$}
+                                child {
+                                    node {$(p,1,Z_0)$}
+                                    child {
+                                        node {$(p,\epsilon,\epsilon)$}
+                                    }
+                                }
+                                child {
+                                    node [below=10] {$(p,\epsilon,XXZ_0)$}
+                                    child {
+                                        node {$(p,\epsilon,XZ_0)$}
+                                        child {
+                                            node {$(p,\epsilon,Z_0)$}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        child {
+                            node [right] {$(p,11,Z_0)$}
+                            child {
+                                node [right=2] {$(p,1,\epsilon)$}
+                            }
+                        }
+                    }
+                }
+                child {node [right=100] {$(p,011,Z_0)$}}
+            }
+            ; 
+    \end{tikzpicture}
+    }
+\end{center}
 \end{solution}
