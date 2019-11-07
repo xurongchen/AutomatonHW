@@ -1,0 +1,17 @@
+\begin{solution}
+构建满足条件的CFG：$G=\{V,T,P,S\}$。
+
+其中：$V=\{S,[qZ_0q],[qZ_0p],[pZ_0q],[pZ_0p],[qXq],[qXp],[pXq],[pXp]\}$，
+$T=\{0,1\}$。\\
+产生式集合$P$包括以下产生式：
+\begin{align*}
+    S       &\rightarrow [qZ_0q] \mid [qZ_0p]\\
+    [qZ_0q] &\rightarrow 0[qXq][qZ_0q] \mid 0[qXp][pZ_0q]\\
+    [qZ_0p] &\rightarrow 0[qXq][qZ_0p] \mid 0[qXp][pZ_0p]\\
+    [qXq]   &\rightarrow 0[qXq][qXq] \mid 0[qXp][pXq] \mid 1[qXq]\\
+    [qXp]   &\rightarrow 0[qXq][qXp] \mid 0[qXp][pXp] \mid 1[qXp] \mid \epsilon\\
+    [pXp]   &\rightarrow \epsilon \mid 1[pxp][pxp] \mid 1[pxq][qxp]\\
+    [pXq]   &\rightarrow 1[pxp][pxq] \mid 1[pxq][qxq]\\
+    [pZ_0p] &\rightarrow 1\\
+\end{align*}
+\end{solution}
