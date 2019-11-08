@@ -1,0 +1,17 @@
+\begin{solution}
+c）构造满足条件的终态接收DPDA：$E=\{Q,\Sigma,\Gamma,\delta,q_0,Z_0,F\}$。
+其中：$Q=\{p_0,p_1,p_2,p_3,p_4\}$，$\Sigma=\{0,1\}$，$\Gamma=\{Z,X\}$,
+$q_0=p_0$，$Z_0=Z$，$F=\{p_2,p_4\}$；\\
+$\delta$的非空转移包括：
+\begin{tabular}{ll}
+    $\delta(p_0,0,Z_0) = \{(p_0,XZ_0)\}$
+    &$\delta(p_0,0,X) = \{(p_0,XX)\}$\\
+    $\delta(p_0,1,Z_0) = \{(p_2,Z_0)\}$
+    &$\delta(p_0,1,X) = \{(p_1,X)\}$\\
+    $\delta(p_1,0,X) = \{(p_3,\epsilon)\}$
+    &$\delta(p_1,1,X) = \{(p_1,X)\}$\\
+    $\delta(p_3,0,X) = \{(p_3,\epsilon)\}$
+    &$\delta(p_3,\epsilon,Z_0) = \{(p_4,Z_0)\}$\\
+    $\delta(p_2,1,Z_0) = \{(p_2,Z_0)\}$
+\end{tabular}
+\end{solution}

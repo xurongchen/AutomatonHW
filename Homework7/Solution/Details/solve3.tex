@@ -1,0 +1,14 @@
+\begin{solution}
+c)构建满足条件的空栈接收PDA：$E=\{Q,\Sigma,\Gamma,\delta,q_0,Z_0\}$。
+
+其中：$Q=\{q\}$，$\Sigma=\{0,1\}$，$\Gamma=\{Z,X,Y\}$，$q_0 = q$，$Z_0=Z$；\\
+$\delta$的非空转移包括：\\
+\begin{tabular}{ll}
+    $\delta(q,\epsilon,Z) = \{(q,\epsilon)\}$
+    &$\delta(q,\epsilon,Y) = \{(q,\epsilon)\}$\\
+    $\delta(q,0,Z) = \{(q,XZ)\}$
+    &$\delta(q,0,X) = \{(q,XX)\}$\\
+    $\delta(q,1,X) = \{(q,Y)\}$
+    &$\delta(q,1,Y) = \{(q,\epsilon)\}$
+\end{tabular}
+\end{solution}

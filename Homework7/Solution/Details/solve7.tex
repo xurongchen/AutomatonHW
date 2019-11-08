@@ -1,0 +1,14 @@
+\begin{solution}
+b）选取任意的$n$和串$a^nb^nc^n \in \{a^nb^nc^i\mid i\le n\}$。
+任意取$uvwxy$，满足$vx \neq \epsilon \wedge |vwx|\le n$。\\
+若选取$k=0$，串$uv^kwx^ky = uwy$，由于$|vwx|\le n$，故该串$a$和$c$的个数不等，
+即$uwy \notin \{a^nb^nc^i\mid i\le n\}$。\\
+于是该文法非上下文无关文法。
+
+c) 选取任意的$n$和串$0^p$，其中$p$是大于$n$的第一个素数。
+任意取$uvwxy$，满足$vx \neq \epsilon \wedge |vwx|\le n$。\\
+不妨设$|vwx|=t \le n \wedge |w|=s \le t$。串$uv^kwx^ky = 0^{p-t+s+k\cdot(t-s)} = 0^{p+(k-1)\cdot(t-s)}$。
+若选取$k=p+1$，则串$uv^kwx^ky = 0^{p+(k-1)\cdot(t-s)} = 0^{p\cdot(t-s+1)}$。显然$p\cdot(t-s+1)$非素数，故
+$uv^kwx^ky \notin \{0^p\mid p$ is a prime $\}$。\\
+于是该文法非上下文无关文法。
+\end{solution}
