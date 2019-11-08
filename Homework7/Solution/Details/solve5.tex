@@ -6,19 +6,31 @@ a) 若原有文法为$G$，则新文法的语言$L(G')=L(G)-\{\epsilon\}$的产�
     B &\rightarrow S \mid A\\
     C &\rightarrow S
 \end{align*}
-\end{solution}
 b)
 \begin{align*}
-    S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
-    A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
-    B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
-    C &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
+    S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
+    A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
+    B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
+    C &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11
 \end{align*}
 c)
 \begin{align*}
-    S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
-    A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
-    B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11 \mid B\\
+    S &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
+    A &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
+    B &\rightarrow 0A0 \mid 1B1 \mid BB \mid 00 \mid 11\\
 \end{align*}
-
-CHECK ME!!!
+d)
+\begin{align*}
+    S &\rightarrow US_1 \mid IS_2 \mid BB \mid UU \mid II\\
+    S_1 &\rightarrow AU\\
+    S_2 &\rightarrow BI\\
+    A &\rightarrow UA_1 \mid IA_2 \mid BB \mid UU \mid II\\
+    A_1 &\rightarrow AU\\
+    A_2 &\rightarrow BI\\
+    B &\rightarrow UB_1 \mid IB_2 \mid BB \mid UU \mid II\\
+    B_1 &\rightarrow AU\\
+    B_2 &\rightarrow BI\\
+    I &\rightarrow 1\\
+    U &\rightarrow 0
+\end{align*}
+\end{solution}
