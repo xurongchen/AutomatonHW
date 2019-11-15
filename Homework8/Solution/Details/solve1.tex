@@ -1,2 +1,9 @@
 \begin{proof}
+    b)
+    对于上下文无关语言$L$，构造正则语言$R$是以$a$结尾的所有串，那么
+    $L' = L\cap R$亦是上下文无关语言。对于CNF形式的$L'$，由于均以$a$结尾，
+    那么对于任意的非终结符$N$存在到终结符的产生式$N\rightarrow t$，
+    若推导式$S\Rightarrow^{*} \beta N$存在，则$t=a$。此时将
+    $L'$中上述所有满足条件的$N$到终结符$a$的产生式变为$N\rightarrow \epsilon$，
+    即可得到$L/a$的一个CFG描述。故若$L$是上下文无关语言，则$L/a$亦是上下文无关的。
 \end{proof}
