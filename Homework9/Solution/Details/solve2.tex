@@ -1,3 +1,28 @@
-\begin{proof}
+\begin{solution}
+    a)
+    构造的TM:
+    $M=(\{q_0,q_f\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_f\})$，其中状态转移$\delta$包括以下的
+    规则：（$q_0$用于表示未移动到最右端之前的状态，$q_1$用于表示将最右端0或\$替换为1以及右侧1变为0，
+    $q_2$用于将带指针移动到最左端，$q_f$即接收终态）
 
-\end{proof}
+    $\delta(q_0,\$)=(q_0,\$,R)$
+    $\delta(q_0,0)=(q_0,0,R)$
+    $\delta(q_0,1)=(q_0,1,R)$
+    $\delta(q_0,B)=(q_1,B,L)$
+
+    $\delta(q_1,0)=(q_2,1,L)$
+    $\delta(q_1,\$)=(q_2,1,L)$
+    $\delta(q_1,1)=(q_1,0,L)$
+
+    $\delta(q_2,0)=(q_2,0,L)$
+    $\delta(q_2,1)=(q_2,1,L)$
+    $\delta(q_2,\$)=(q_2,\$,L)$
+    $\delta(q_2,B)=(q_f,B,R)$
+
+    b)
+    \begin{align*}
+        q_0\$111 &\vdash \$q_0111 \vdash \$1q_011 \vdash \$11q_01 \vdash \$111q_0B
+        \vdash \$11q_11 \vdash \$1q_110\\
+        &\vdash \$q_1100 \vdash q_1\$000 \vdash q_21000 \vdash q_2B1000 \vdash q_f1000
+    \end{align*}
+\end{solution}

@@ -1,3 +1,24 @@
-\begin{proof}
+\begin{solution} c)构造的TM:
+    $M=(\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_f\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_f\})$，其中状态转移$\delta$包括以下的
+    规则：（对于带上最左边的元素，在最右边消除同样的元素直至为空）
 
-\end{proof}
+    $\delta(q_0,B) = (q_f,B,R)$
+
+    $\delta(q_0,0) = (q_1,B,R)$
+    $\delta(q_1,0) = (q_1,0,R)$
+    $\delta(q_1,1) = (q_1,1,R)$
+    $\delta(q_1,B) = (q_2,B,L)$
+    $\delta(q_2,0) = (q_3,B,L)$
+    $\delta(q_3,0) = (q_3,0,L)$
+    $\delta(q_3,1) = (q_3,1,L)$
+    $\delta(q_3,B) = (q_0,B,R)$
+
+    $\delta(q_0,1) = (q_4,B,R)$
+    $\delta(q_4,0) = (q_4,0,R)$
+    $\delta(q_4,1) = (q_4,1,R)$
+    $\delta(q_4,B) = (q_5,B,L)$
+    $\delta(q_5,1) = (q_6,B,L)$
+    $\delta(q_6,0) = (q_6,0,L)$
+    $\delta(q_6,1) = (q_6,1,L)$
+    $\delta(q_6,B) = (q_0,B,R)$
+\end{solution}
