@@ -1,0 +1,15 @@
+\textbf{[Exercise 8.4.2]} Here is the transition function of a nondeterministic
+TM $M=(\{q_0,q_1,q_2\},\{0,1\},\{0,1,B\},\delta,q_0,B,\{q_2\})$:
+\begin{center}
+    \begin{tabular}{r|lll}
+        $\delta$ &0 &1 &$B$ \\\hline \hline
+        $q_0$ &$\{(q_0,1,R)\}$ &$\{(q_1,0,R)\}$ &$\emptyset$ \\
+        $q_0$ &$\{(q_1,0,R),(q_0,0,L)\}$ &$\{(q_1,1,R),(q_0,1,L)\}$ &$\{(q_2,B,R)\}$ \\
+        $q_2$ &$\emptyset$ &$\emptyset$ &$\emptyset$
+    \end{tabular}
+\end{center}
+
+
+Show the ID's reachable from the initial ID if the input is:
+
+b) 011.
