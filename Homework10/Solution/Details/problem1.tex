@@ -1,0 +1,21 @@
+\textbf{[Exercise 8.4.7]} In this exercises, we shall implement a stack using a special
+3-tape TM.
+
+1. The first tape will be used only to hold and read the input. The input
+alphabet consists of the symbol $\uparrow$, which we shall interpret as "pop the
+stack," and the symbols $a$ and $b$, which are interpreted as "push an $a$
+(respectively $b$) onto the stack."
+
+2. The second tape is used to store the stack.
+
+3. The third tape is the output tape. Every time a symbol is popped from
+the stack, it must be written on the output tape, following all previously
+written symbols.
+
+The Turing machine is required to start with an empty stack and implement the
+sequence of push and pop operations, as specified on the input, reading from
+left to right. If the input causes the TM to try to pop and empty stack, then it
+must halt in a special error state $q_e$. If the entire input leaves the stack empty
+at the end, then the input is accepted by going to the final state $q_r$. Describe
+the transition function of the TM informally but clearly. Also, give a summary
+of the purpose of each state you use.
