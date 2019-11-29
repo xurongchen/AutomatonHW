@@ -1,0 +1,11 @@
+\begin{proof}
+    设$w^R$是串$w$的反转，若$w \in a\backslash L$，则$aw \in L$，即$w^Ra \in L^R$，
+    进而有$w^R \in L^R/a$，于是得到结论：
+    $$a\backslash L = (L^R/a)^R$$
+    显然，由于$L$是正则的，故$(L^R/a)^R$是正则的，得证。\\
+    \bigskip
+    附：若$L$是正则的，则$L/a$是正则的的证明：\\
+    若$L=\{Q,\Sigma,\delta,q_0,Q_{end}\}$，
+    则对应可构造出一个DFA：$L/a=\{Q,\Sigma,\delta,q_0,Q'_{end}\}$.
+    其中：$Q'_{end}=\{ q \mid q\in Q \wedge \delta(q,a)\in Q_{end} \}$.
+\end{proof}
