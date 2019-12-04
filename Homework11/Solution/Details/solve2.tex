@@ -1,0 +1,16 @@
+\begin{solution}真值表计算如下所示：
+
+    \resizebox{\linewidth}{!}{
+    \begin{minipage}{463pt}
+        \begin{tabular}{c|c|c|c|c|c|c|c|c}
+            $p$ &$q$ &$\phi_1:q\rightarrow p$ &$\phi_2:p\vee\phi_1$ &$\phi_3:q\rightarrow \phi_2$ &$\phi_4:p\rightarrow q$ &$\phi_5:\neg(\phi_4)$ &$\phi_6:\phi_3\vee\phi_5$ &$\varphi:\phi_6\rightarrow p$\\\hline
+            $\top$ &$\top$ &$\top$ &$\top$ &$\top$ &$\top$ &$\bot$ &$\top$&$\top$ \\
+            $\top$ &$\bot$ &$\top$ &$\top$ &$\top$ &$\bot$ &$\top$ &$\top$&$\top$ \\
+            $\bot$ &$\top$ &$\bot$ &$\bot$ &$\bot$ &$\top$ &$\bot$ &$\bot$&$\top$ \\
+            $\bot$ &$\bot$ &$\top$ &$\top$ &$\top$ &$\top$ &$\bot$ &$\top$&$\bot$ 
+        \end{tabular}
+    \end{minipage}
+    }
+
+    于是$\not \models \varphi$.
+\end{solution}
