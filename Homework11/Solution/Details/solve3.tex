@@ -1,2 +1,16 @@
-\begin{solution}
-\end{solution}
+\begin{proof}
+    $\models (p\rightarrow q) \Rightarrow p\models q$的证明：
+    \begin{align*}
+        \models&\; p\rightarrow q  &\text{1}\\
+        p\models&\; p &\text{2}\\
+        p\models&\; q &\text{MP(1,2) 3}\\
+    \end{align*}
+
+    $p\models q \Rightarrow\; \models (p\rightarrow q) $的证明：
+    \begin{align*}
+        p\models&\; q &\text{1}\\
+        p\models&\; p \rightarrow q &\text{变形(1) 2}\\
+        \neg p\models&\; p \rightarrow q &\text{3}\\
+        \models&\; p \rightarrow q &\text{由(2,3) 4}
+    \end{align*}
+\end{proof}

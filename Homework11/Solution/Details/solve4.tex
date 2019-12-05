@@ -1,2 +1,15 @@
-\begin{solution}
-\end{solution}
+\begin{proof}~\\
+    $\phi_1,\phi_2,\ldots,\phi_n \vdash \psi \Rightarrow\; \models \phi_1\rightarrow\phi_2\rightarrow\ldots\rightarrow\phi_n\rightarrow\psi$:
+
+    采用反证法。对于蕴涵$x\rightarrow y$非重言式，则必然存在一组赋值使得$x\rightarrow y$为\textbf{F}，$x$为\textbf{T}，$y$为\textbf{F}。
+    继而对于$\phi_1\rightarrow\phi_2\rightarrow\ldots\rightarrow\phi_n\rightarrow\psi$为非重言式，易归纳出
+    $\phi_1,\phi_2,\ldots,\phi_n$为\textbf{T}，而$\psi$为\textbf{F}。显然，这与
+    $\phi_1,\phi_2,\ldots,\phi_n \models \psi$矛盾，进而根据完备性与题设的$\phi_1,\phi_2,\ldots,\phi_n \vdash \psi$矛盾。
+
+    $\models\phi_1\rightarrow\phi_2\rightarrow\ldots\rightarrow\phi_n\rightarrow\psi \Rightarrow\phi_1,\phi_2,\ldots,\phi_n\vdash\psi$:
+
+    将$\phi_1,\phi_2,\ldots,\phi_n$作为前提。第一步，利用\textit{Modus ponens}规则推导可以得到
+    $\phi_1\vdash \phi_2,\phi_3,\ldots,\phi_n \rightarrow \psi$；第$k$步，继续利用\textit{Modus ponens}规则得到
+    $\phi_1,\phi_2,\ldots\phi_k\vdash \phi_{k+1},\phi_{k+2},\ldots,\phi_n \rightarrow \psi$；如此反复，在第$n$步时
+    得证。
+\end{proof}
