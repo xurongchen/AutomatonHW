@@ -1,16 +1,61 @@
 \begin{proof}
+    % 基于K,S,DN,MP公理系统进行证明：
+    根据希尔伯特公理系统进行证明：
+    \begin{align*}
+        \text{K公理:}\; &A \rightarrow (B \rightarrow A)\\
+        \text{S公理:}\; &(A \rightarrow (B \rightarrow C))\rightarrow ((A\rightarrow B)\rightarrow(A\rightarrow C))\\
+        % \text{DN:}\;&\neg \neg A \rightarrow A\\
+        \text{MP规则:}\; &\{A\rightarrow B,A\} \models B.
+    \end{align*}
+    定理$\models A\rightarrow A$的证明：
+    \begin{align*}
+        \models&\; (A\rightarrow ((D\rightarrow A)\rightarrow A))\rightarrow \\
+            &((A\rightarrow (D\rightarrow A))\rightarrow (A\rightarrow A))
+            &\text{S}(B\Leftarrow D\rightarrow A,C\Leftarrow A)\; \text{1}\\
+        \models&\; A\rightarrow ((D\rightarrow A)\rightarrow A)&\text{K}(B\Leftarrow D\rightarrow A)\; \text{2}\\
+        \models&\; (A\rightarrow (D\rightarrow A))\rightarrow (A\rightarrow A) &\text{MP,(1),(2)}\; \text{3}\\
+        \models&\; A\rightarrow (D\rightarrow A) &\text{K}\;\text{4}\\
+        \models&\; A\rightarrow A&\text{MP,(3),(4)}\; \text{5}\\
+    \end{align*}
     $\models (p\rightarrow q) \Rightarrow p\models q$的证明：
     \begin{align*}
-        \models&\; p\rightarrow q  &\text{1}\\
-        p\models&\; p &\text{2}\\
-        p\models&\; q &\text{MP(1,2) 3}\\
+        \models&\; p\rightarrow q  &\text{[前提]\;1}\\
+        % \models&\; \neg \neg p\rightarrow p  &\text{[DD引入]\;2}\\
+        % \models&\; p\rightarrow p  &\text{[定理$A\rightarrow A$]\;2}\\
+        % p\models&\; p &\text{[MP\{2, $p$\}]\;3}\\
+        p\models&\; q &\text{[MP\{1, $p$\}] 2}\\
     \end{align*}
 
     $p\models q \Rightarrow\; \models (p\rightarrow q) $的证明：
-    \begin{align*}
-        p\models&\; q &\text{1}\\
-        p\models&\; p \rightarrow q &\text{变形(1) 2}\\
-        \neg p\models&\; p \rightarrow q &\text{3}\\
-        \models&\; p \rightarrow q &\text{由(2,3) 4}
-    \end{align*}
+
+    假设$A\models B$基于演绎证明系统的一个证明序列为$B_1,B_2,\ldots,B_n$（$B_n=B$）。
+    
+    下面采用归纳法证明$A\models B \Rightarrow \; \models (A\rightarrow B)$：
+
+    \textbf{初始：} $n=1$。此时$B_1$只能有两个来源：
+
+    \textit{初始情形1：}$B_1$是公理（包括公理的某种代入）。此时显然$\models B_1$，又根据K公理可知，$\models B_1\rightarrow (A \rightarrow B_1)$，
+    应用MP规则，$\models (A \rightarrow B_1)$；
+
+    \textit{初始情形2：}$B_1$即$A$。此时由于定理$\models A\rightarrow A$，可知$\models (A \rightarrow B_1)$；
+    
+    于是初始$\models (A \rightarrow B_1)$。
+
+    \textbf{归纳：} $n=i$。此时$B_i$有两个来源：
+
+    \textit{归纳情形1：}$B_i$是公理（包括公理的某种代入）或者$A$，于是同初始情形，可证$\models (A \rightarrow B_i)$；
+
+    \textit{归纳情形2：}$B_i$是$B_j,B_m$应用MP规则的归结（$j<i,m<i$），假设MP$\frac{B_j;B_m}{B_i}$，另外我们已知
+    $\models (A \rightarrow B_j)$，以及$\models (A \rightarrow B_m)$。又根据MP规则，
+    不是一般性地，我们可以假定$B_m$是$B_j\rightarrow B_i$的形式，于是代入公式可得
+    $\models (A \rightarrow (B_j\rightarrow B_i))$。注意到，S公理的一个有效的代入是
+    $\models (A \rightarrow (B_j \rightarrow B_i))\rightarrow ((A\rightarrow B_j)\rightarrow(A\rightarrow B_i))$，
+    于是应用MP规则，得到$\models ((A\rightarrow B_j)\rightarrow(A\rightarrow B_i))$，继续利用$\models (A \rightarrow B_j)$
+    应用MP规则，得到$\models (A \rightarrow B_i)$。
+
+    于是归纳$\models (A \rightarrow B_i)$。
+
+    综上所述，根据初始条件和归纳条件，对于任意长度的证明序列，$A\models B \Rightarrow\; \models (A \rightarrow B)$。
+
+    双向得证。
 \end{proof}
