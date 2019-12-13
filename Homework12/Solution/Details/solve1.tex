@@ -1,0 +1,21 @@
+\begin{solution}
+    （1）约定谓词$P(x)$：$x$是乌鸦，$Q(x,y)$：$x$、$y$的黑度相同。
+    $$\forall x,y (P(x)\wedge P(y)\rightarrow Q(x,y))$$
+    （2）约定谓词$P(x)$：$x$是筵席，$Q(x)$：$x$能够结束。
+    $$\forall x (P(x)\rightarrow Q(x))$$
+    （3）约定谓词$P(x)$：$x$是金子，$Q(x)$：$x$能够闪光。
+    $$\exists x (\neg P(x) \wedge Q(x))$$
+    （4）约定谓词$P(x)$：$x$是奇数，$Q(x)$：$x$是素数。
+    $$\exists x (\neg P(x) \wedge Q(x))$$
+    （5）约定谓词$P(x)$：$x$是偶数，$Q(x)$：$x$是素数，$R(x,y)$：$x$、$y$相等。
+    $$\forall x,y (P(x)\wedge Q(x)\wedge P(y)\wedge Q(y)\rightarrow R(x,y))$$
+    （6）约定谓词$P(x)$：$x$是猫，$Q(x)$：$x$是动物。
+    $$(\forall x (P(x)\rightarrow Q(x)))\wedge \neg(\forall x (Q(x)\rightarrow P(x)))$$
+    （7）约定谓词$P(x)$：$x$ is mushroom，$Q(x)$：$x$ is purple，$R(x)$：$x$ is poisonous。
+    $$\neg \exists (x P(x)\wedge Q(x)\wedge R(x))$$
+    （8）约定谓词$P(x)$：$x$ is mushroom，$Q(x)$：$x$ is purple，$R(x,y)$：$x$, $y$ is same。
+    \begin{align*}
+        &\exists x,y(P(x)\wedge Q(x)\wedge P(y)\wedge Q(y)\wedge \neg R(x,y) \wedge \\
+        &\forall z(P(z)\wedge Q(z)\rightarrow (R(x,z)\vee R(y,z))))
+    \end{align*}
+\end{solution}

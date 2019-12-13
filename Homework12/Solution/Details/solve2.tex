@@ -1,0 +1,47 @@
+\begin{solution}
+    \textbf{约定：}
+    $P(x)$：$x$是有理数；
+    $Q(x)$：$x$是实数；
+    $R(x)$：$x$是无理数；
+    $S(x)$：$x$是虚数.
+
+    \textbf{已知：}
+    \begin{align*}
+        \forall x P(x) &\rightarrow Q(x)\\
+        \forall x R(x) &\rightarrow Q(x)\\
+        \forall x S(x) &\rightarrow \neg Q(x)
+    \end{align*}
+
+    \textbf{求证：}
+    $$\forall x S(x) \rightarrow \neg P(x) \wedge \neg R(x)$$
+
+    \begin{proof}~\\
+
+        \centering
+        \begin{tabular}{rclll}
+            1& &$\forall x S(x) \rightarrow \neg Q(x)$& premise\\
+            2& &$\forall x P(x) \rightarrow Q(x)$& premise\\
+            3& &$\forall x R(x) \rightarrow Q(x)$& premise&\\\cline{2-5}
+            4&\multicolumn{1}{|c}{$x_0$}&$S(x_0) \rightarrow \neg Q(x_0)$ &$\forall x$ e 1&\multicolumn{1}{c|}{}\\\cline{3-4}
+            5&\multicolumn{1}{|c|}{} &$S(x_0)$& assumption&\multicolumn{1}{|c|}{}\\
+            6&\multicolumn{1}{|c|}{} &$\neg Q(x_0)$ &$\rightarrow$ e 4,5&\multicolumn{1}{|c|}{}\\
+            7&\multicolumn{1}{|c|}{} &$P(x_0) \rightarrow Q(x_0)$ &$\forall x$ e 2&\multicolumn{1}{|c|}{}\\
+            8&\multicolumn{1}{|c|}{} &$\neg P(x_0)$ &MT 6,7&\multicolumn{1}{|c|}{}\\
+            9&\multicolumn{1}{|c|}{} &$R(x_0) \rightarrow Q(x_0)$ &$\forall x$ e 3&\multicolumn{1}{|c|}{}\\
+           10&\multicolumn{1}{|c|}{} &$\neg R(x_0)$ &MT 6,9&\multicolumn{1}{|c|}{}\\
+           11&\multicolumn{1}{|c|}{} &$\neg P(x_0)\wedge\neg R(x_0)$ &$\wedge$ i 8,10&\multicolumn{1}{|c|}{}\\\cline{3-4}
+           12&\multicolumn{1}{|c}{}  &$S(x_0) \rightarrow \neg P(x_0)\wedge\neg R(x_0)$ &$\rightarrow$ i 5,11&\multicolumn{1}{c|}{}\\\cline{2-5}
+           13& &$\forall x S(x) \rightarrow \neg P(x) \wedge \neg R(x)$ &$\forall x$ i 12\\
+        \end{tabular}
+
+        % \fbox{%
+        %     \parbox{\textwidth}{%
+        %         \begin{center}
+        %         aaa\\
+        %         bbb
+        %         \end{center}
+        %     }%
+        %     }
+    \end{proof}
+
+\end{solution}
