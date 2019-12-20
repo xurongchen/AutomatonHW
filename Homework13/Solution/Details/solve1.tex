@@ -1,0 +1,15 @@
+\begin{solution}
+    \textbf{(c)}
+    
+    (i) 路径$q_3q_4\ldots$满足$\varphi$。因为$q_4$的唯一后继是$q_3$，满足$a\wedge \neg b$；
+        故状态$q_4$满足$\textrm{X }(a\wedge \neg b)$。又$q_3$满足$a$，于是路径$q_3q_4\ldots$满足$\varphi$。
+
+    (ii)不成立。状态$q_2$不满足$\textrm{X }(a\wedge \neg b)$且不满足$a$，于是路径$q_3(q_2)^i$不满足。
+
+    \textbf{(d)}
+   
+    (i) 路径$q_3q_1(q_2)^i$满足$\varphi$。因为路径上$q_3$满足$\textrm{X }(\neg b)$，且$q_3,q_1,q_2,$均满足$\neg a\vee \neg b$。
+
+    (ii)不成立。状态$q_3$不一定满足$\textrm{X }(\neg b)$。
+
+\end{solution}

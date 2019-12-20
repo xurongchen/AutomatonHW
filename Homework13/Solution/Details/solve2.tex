@@ -1,0 +1,12 @@
+\begin{solution}
+    (a) $req$成立的状态包括左上和右上两个状态。
+    
+    对于左上状态，有两个后继状态（右上和右下），两个状态均满足$busy$；
+    同理，对于右上状态，两个后继状态也均满足$busy$；
+
+    于是$\textrm{G }(req \rightarrow \textrm{ F } busy)$成立。
+    
+    (b)根据题意，$busy$和$ready$是一个变量的两个枚举值。于是$\neg busy = ready$。
+    由于所有初始状态$ready$成立，即$\neg busy$成立，于是$req \textrm{ U } \neg busy$
+    成立，$\neg(req \textrm{ U } \neg busy)$不成立。
+\end{solution}
